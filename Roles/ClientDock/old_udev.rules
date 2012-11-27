@@ -1,0 +1,3 @@
+SUBSYSTEMS=="usb", KERNEL=="sd?1", ACTION=="add", RUN+="/my.io.mount.sh add $env{ID_SERIAL_SHORT}  $env{ID_VENDOR} $env{ID_VENDOR_ID}"
+SUBSYSTEMS=="usb", KERNEL=="sd?1", ACTION=="remove", RUN+="/my.io.mount.sh remove $env{ID_SERIAL_SHORT} $env{ID_VENDOR} $env{ID_VENDOR_ID}"
+
