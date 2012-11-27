@@ -1,0 +1,6 @@
+#
+# Udev > USB
+#
+
+SUBSYSTEMS=="usb", KERNEL=="sd?1", ACTION=="add", RUN+="/my.io/my.io.server/Roles/ClientDock/ignition.sh add $env{ID_SERIAL_SHORT}  $env{ID_VENDOR} $env{ID_VENDOR_ID}"
+SUBSYSTEMS=="usb", KERNEL=="sd?1", ACTION=="remove", RUN+="/my.io/my.io.server/Roles/ClientDock/ignition.sh remove $env{ID_SERIAL_SHORT} $env{ID_VENDOR} $env{ID_VENDOR_ID}"
